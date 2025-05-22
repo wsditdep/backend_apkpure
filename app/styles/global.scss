@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a3a3a3;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+}
+
+
+.jodit-react-container {
+    width: 600px !important;
+}
+
+.jodit-container:not(.jodit_inline) .jodit-wysiwyg {
+    background: #fff;
+    min-height: 200px !important;
+    max-height: 500px !important;
+}
+
+.jodit-icon_fullsize.jodit-icon {
+    display: none !important;
+}
+
+.jodit-status-bar a.jodit-status-bar-link {
+    display: none !important;
+}
+
+.jodit-icon_fullsize {
+    display: none;
+}
+
+.jodit-wysiwyg {
+    min-height: 300px !important;
+    max-height: 400px !important;
+}
+
+.translate_disable {
+    translate: no !important;
+}
+
+.translate_enable {
+    translate: none !important;
+}
+
+.d-none {
+    display: none;
+}
+
+.noActionAvailable {
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+#gt_float_wrapper {
+    transform: scale(0.8);
+}
+
+.loader-wrapper {
+    background: rgba(255, 255, 255, 0.316);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+    background:
+        var(--c) 50% 0,
+        var(--c) 50% 100%,
+        var(--c) 100% 50%,
+        var(--c) 0 50%;
+    background-size: 12px 12px;
+    animation: l12 1s infinite;
+}
+
+.loader::before {
+    margin: 4px;
+    filter: hue-rotate(45deg);
+    background-size: 8px 8px;
+    animation-timing-function: linear
+}
+
+@keyframes l12 {
+    100% {
+        transform: rotate(.5turn)
+    }
+}
