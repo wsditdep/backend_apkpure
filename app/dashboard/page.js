@@ -45,7 +45,7 @@ const page = async ({ children }) => {
                     />
                     {children}
                 </div>
-            </div>            
+            </div>
         </div>
     )
 }

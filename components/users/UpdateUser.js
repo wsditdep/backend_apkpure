@@ -104,6 +104,16 @@ const UpdateUser = ({ data, membership, isUpdate, setIsUpdate }) => {
         }
     }
 
+    const [cutomAmount, setCustomAmount] = useState("");
+    const makeCustomList = () => {
+        if (cutomAmount === "") {
+            return toast.error("Empty value");
+        }
+
+        setTags((prev) => [...prev, Number(cutomAmount)]);
+        setCustomAmount("")
+    }
+
     useEffect(() => {
         set_maxValue(data?.match_max);
         set_minValue(data?.match_min);
@@ -401,6 +411,17 @@ const UpdateUser = ({ data, membership, isUpdate, setIsUpdate }) => {
                                                 }
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className="create-form-group custom-winning-amount">
+                                        <label>Custom winning amount</label>
+                                        <input
+                                            type="number"
+                                            value={cutomAmount}
+                                            onChange={(e) => setCustomAmount(e.target.value)}
+                                            onWheel={(e) => e.target.blur()}
+                                            onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
+                                        />
+                                        <p onClick={() => makeCustomList()}>Add</p>
                                     </div>
                                     <div className="create-form-action">
                                         <Submit setIsUpdate={setIsUpdate} />
